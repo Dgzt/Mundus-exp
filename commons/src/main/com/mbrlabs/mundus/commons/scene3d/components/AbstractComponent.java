@@ -25,7 +25,10 @@ import com.mbrlabs.mundus.commons.scene3d.GameObject;
 public abstract class AbstractComponent implements Component {
 
     public GameObject gameObject;
-    protected Type type;
+    /**
+     * Protected values from {@link Component.Type} or custom values from plugins or runtime
+     */
+    protected String type;
 
     public AbstractComponent(GameObject go) {
         this.gameObject = go;
@@ -33,11 +36,16 @@ public abstract class AbstractComponent implements Component {
 
     @Override
     public void setType(Type type) {
+        setType(type.name());
+    }
+
+    @Override
+    public void setType(String type) {
         this.type = type;
     }
 
     @Override
-    public Type getType() {
+    public String getType() {
         return this.type;
     }
 
