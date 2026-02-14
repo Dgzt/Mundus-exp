@@ -31,3 +31,6 @@ jobs:
 
     - name: Check
       run: ./gradlew check
+
+    - name: Distribute Editor
+      run: ./gradlew editor:distEditor
