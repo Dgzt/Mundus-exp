@@ -1,8 +1,8 @@
 name: common
 
 on:
-  tags:
-    tags: [ '**' ]
+  push:
+    tags: [ ** ]
 
 permissions:
   contents: read
