@@ -34,3 +34,9 @@ jobs:
 
     - name: Distribute Editor
       run: ./gradlew editor:distEditor
+
+    - uses: actions/upload-artifact@v6
+      with:
+        name: Mundus Editor
+        compression-level: 9
+        path: editor/build/libs/Mundus-*.jar
