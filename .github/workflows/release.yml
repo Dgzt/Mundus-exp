@@ -1,4 +1,4 @@
-name: common
+name: release
 
 on:
   release:
@@ -32,3 +32,10 @@ jobs:
     - name: Check
       run: ./gradlew check
 
+    - name: Distribute Editor
+      run: ./gradlew editor:distEditor
+
+    - name: Upload asset to release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: editor/build/libs/Mundus-*.jar
