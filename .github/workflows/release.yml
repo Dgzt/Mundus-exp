@@ -1,8 +1,8 @@
 name: common
 
 on:
-  pull_request:
-    branches: [ master ]
+  tags:
+    tags: [ '**' ]
 
 permissions:
   contents: read
